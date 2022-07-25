@@ -1,0 +1,8 @@
+podman tag pinger local-registry:5000/pinger
+
+podman image ls
+
+podman push local-registry:5000/pinger
+
+
+controlplane $ podman tag docker.io/quincycheng/killercoda-http-authn-server:latest local-registry:5000/killercoda-http-authn-server:latest
