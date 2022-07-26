@@ -42,7 +42,7 @@ spec:
       serviceAccountName: insecure-app-svc-acc
       containers:
       - name: insecure-app-container
-        image: localhost:5000/insecure-app:latest
+        image: local-registry:5000/insecure-app:latest
         ports:
         - containerPort: 3000
         env:
