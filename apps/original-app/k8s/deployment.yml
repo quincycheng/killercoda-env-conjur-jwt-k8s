@@ -18,7 +18,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: insecure-app
+    app: original-app
   ports:
     - protocol: TCP
       port: 3031
@@ -27,22 +27,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: insecure-app
+  name: original-app
   namespace: demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: insecure-app
+      app: original-app
   template:
     metadata:
       labels:
-        app: insecure-app
+        app: original-app
     spec:
-      serviceAccountName: insecure-app-svc-acc
+      serviceAccountName: original-app-svc-acc
       containers:
-      - name: insecure-app-container
-        image: local-registry:5000/insecure-app:latest
+      - name: original-app-container
+        image: local-registry:5000/original-app:latest
         ports:
         - containerPort: 3000
         env:

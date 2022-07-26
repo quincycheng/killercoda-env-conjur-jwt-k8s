@@ -6,3 +6,4 @@ podman push local-registry:5000/pinger
 
 
 controlplane $ podman tag docker.io/quincycheng/killercoda-http-authn-server:latest local-registry:5000/killercoda-http-authn-server:latest
+local-registry 172.30.1.2
