@@ -7,13 +7,13 @@ metadata:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: insecure-app-svc-acc
+  name: original-app-svc-acc
   namespace: demo
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: insecure-app-service
+  name: original-app-service
   namespace: demo
 spec:
   type: LoadBalancer
@@ -42,7 +42,7 @@ spec:
       serviceAccountName: original-app-svc-acc
       containers:
       - name: original-app-container
-        image: local-registry:5000/original-app:latest
+        image: controlplane:5000/original-app:latest
         ports:
         - containerPort: 3000
         env:

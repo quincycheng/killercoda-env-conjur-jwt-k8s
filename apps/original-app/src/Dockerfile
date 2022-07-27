@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM docker.io/golang:alpine
 
 RUN mkdir /app
 COPY . /app
